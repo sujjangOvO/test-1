@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>object</h1>
+    <h2>Create</h2>
+    <script>
+      // 배열은 대괄호, object literal은(객체) 중괄호
+      var coworkers = {
+        "programmer" : "suyeon",
+        "designer" : "sujjang"
+      };
+      document.write("programmer : "+coworkers.programmer+"<br>");
+      document.write("programmer : "+coworkers.designer+"<br>");
+      coworkers.bookeeper = "ABCD"; // bookeeper는 객체에 소속된 변수(=property)
+      document.write("programmer : "+coworkers.bookeeper+"<br>");
+      coworkers["data scientis"] = "su"; // 굳이 띄어쓰기를 ?
+      document.write("programmer : "+coworkers["data scientis"]+"<br>");
+    </script>
+
+    <h2>Iterate</h2>
+    <script>
+      // coworkers의 모든 데이터를 꺼내서 출력해보자 -> 반복문 사용
+      for(var key in coworkers){ // 데이터 수 만큼 실행, key값이 실행될 떄 마다 key값이 하나씩 나오게 된다.
+        document.write(coworkers[key]+"<br>");
+      }
+    </script>
+
+    <h2>Property & Method</h2>
+    <script>
+      // 객체는 문자말고도 여러 자료형을 담을 수 있다.
+      // 함수도 담을 수 있다!
+      // coworkers에 method를 추가해보자.
+      coworkers.showAll = function(){
+        //for(var key in coworkers) document.write(coworkers[key]+"<br>"); // but, 객체의 이름이 바뀌게 되면 사용할 수 없게 된다.
+        for(var key in coworkers) document.write(this[key]+"<br>"); // this로 객체 이름을 변경하면 똑같은 결과. 변수의 이름이 바뀌게 되어도 자기 자신을 가리키기 때문에 영향을 받지 않는다.
+      } // = function showAll()
+      coworkers.showAll(); // 객체에 소속된 함수(=method)를 만들어 사용할 수 있게 된다.
+    </script>
+  </body>
+</html>

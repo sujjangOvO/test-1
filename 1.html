@@ -3,6 +3,8 @@
 <head>
   <title>WEB1 - html</title>
   <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src = "colors.js"> </script>
 </head>
 <!--
 이 페이지가 html로서 만들어 졌다는 것을 표현하기 위해 문서의 시작에 <!DOCTYPE html>을 추가
@@ -11,6 +13,7 @@
 -->
 <body>
 <h1><a href="index.html">WEB</a></h1>
+  <input id="night_day" type="button" value="night" onclick="nightDayHandler(this)">
 <ol>
   <li><a href="1.html"> HTML</a> </li>
   <li><a href="2.html"> CSS</a> </li>
